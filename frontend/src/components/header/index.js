@@ -8,8 +8,7 @@ import {
   XIcon,
 } from "@heroicons/react/outline"
 import { Link } from "react-router-dom"
-import Login from "../../pages/login/index"
-import Registration from "../../pages/registration/index"
+
 
 const currencies = ["CAD", "USD", "AUD", "EUR", "GBP"]
 const navigation = {
@@ -99,10 +98,10 @@ function classNames(...classes) {
 }
 
 export default function Header() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
 
   return (
-    <div className="bg-white">
+    <div className="bg-white sticky z-50">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog
@@ -216,6 +215,8 @@ export default function Header() {
                   </div>
                 ))}
               </div>
+
+              
 
               <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                 {/* Currency selector */}

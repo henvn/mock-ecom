@@ -7,7 +7,7 @@ import About from "./AboutSection"
 const Storefront = () => {
   return (
     <>
-      <PromoSection />
+      <PromoSection className='z-0' />
       <CategoryPreviewSection />
       <About />
       <CollectionPreviewSection />
