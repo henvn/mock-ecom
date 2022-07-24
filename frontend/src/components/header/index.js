@@ -1,4 +1,3 @@
-
 import { Fragment, useState } from "react"
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react"
 import {
@@ -8,7 +7,9 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline"
-
+import { Link } from "react-router-dom"
+import Login from "../../pages/login/index"
+import Registration from "../../pages/registration/index"
 
 const currencies = ["CAD", "USD", "AUD", "EUR", "GBP"]
 const navigation = {
@@ -97,7 +98,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-export default function Example() {
+export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
@@ -217,25 +218,6 @@ export default function Example() {
               </div>
 
               <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                <div className="flow-root">
-                  <a
-                    href="#"
-                    className="-m-2 p-2 block font-medium text-gray-900"
-                  >
-                    Create an account
-                  </a>
-                </div>
-                <div className="flow-root">
-                  <a
-                    href="#"
-                    className="-m-2 p-2 block font-medium text-gray-900"
-                  >
-                    Sign in
-                  </a>
-                </div>
-              </div>
-
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                 {/* Currency selector */}
                 <form>
                   <div className="inline-block">
@@ -321,18 +303,24 @@ export default function Example() {
               </form>
 
               <div className="flex items-center space-x-6">
-                <a
+                {/* <a
                   href="#"
                   className="text-sm font-medium text-white hover:text-gray-100"
                 >
                   Sign in
-                </a>
-                <a
-                  href="#"
+                </a> */}
+                <Link
+                  to="/signin"
+                  className="text-sm font-medium text-white hover:text-gray-100"
+                >
+                  Sign in
+                </Link>
+                <Link
+                  to="/registration"
                   className="text-sm font-medium text-white hover:text-gray-100"
                 >
                   Create an account
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -530,7 +518,6 @@ export default function Example() {
             </div>
           </div>
         </nav>
-
       </header>
     </div>
   )
